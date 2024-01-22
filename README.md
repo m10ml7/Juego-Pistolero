@@ -45,7 +45,7 @@ public class Juego {
             e.printStackTrace();
         } 
 # Reglas del juego.
-# Los mensajes anteriores se imprimen por consola. Estos mensajes son las instrucciones del funcionamiento y reglas del juego.
+# Los mensajes anteriores se imprimen por consola.
 # Todos los mensajes anteriores se muestran gracias al comando (System.out.println).
         System.out.println("- No se puede accionar la tecla antes de que se muestre el texto ¡DISPARA!");
         System.out.println("- Con un solo disparo certero el jugador ganará.");
