@@ -3,6 +3,7 @@
 # Importación Random.
 // Se utiliza la importación Random de la biblioteca java.util para que se genere tiempos aleatorios.
 import java.util.Random; 
+
 # Importación Scanner.
 // Se utiliza la importación Scanner de la biblioteca java.util para leer la entrada por consola.
 import java.util.Scanner; 
