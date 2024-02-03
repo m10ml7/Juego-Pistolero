@@ -1,28 +1,36 @@
 # Juego-Pistolero
 
-# Se utiliza la importación Random de la biblioteca java.util para que se genere un tiempo aleatorios.
+# Importación Random.
+// Se utiliza la importación Random de la biblioteca java.util para que se genere tiempos aleatorios.
 import java.util.Random; 
-# Se utiliza la importación Scanner de la biblioteca java.util para leer la entrada por consola.
+# Importación Scanner.
+// Se utiliza la importación Scanner de la biblioteca java.util para leer la entrada por consola.
 import java.util.Scanner; 
 
-# Esta es la clase principal la he llamado "Juego".
+# Esta es la clase principal la he llamada "Juego".
 public class Juego { 
 
-# El método main es el punto de entrada del programa.
+# El método main.
+// Punto de entrada del programa.
     public static void main(String[] args) { 
 
- # Mensaje de bienvenida que se muestra por consola.       
+ # Mensaje de bienvenida.       
         System.out.println("¿Quién será el pistolero más rápido del oeste?"); 
- # Este es un comando que hace esperar 2 segundos en concreto, hasta que continue el resto del programa.       
+// Todos los mensaje con System.out.println se muestran por consola.
+
+ # Tiempo de 2 segundos. 
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } 
-# Instrucciones del juego.    
+// Todos los comandos de tiempo hacen que el programa quede en espera hasta que finalice el tiempo ajustado y que en espera el resto del programa.
+// Hay muchos ejemplos en este código.
+
+# Mensaje con las instrucciones del juego.    
         System.out.println("Para ganar, después de la señal ¡DISPARAR! vuestras teclas debereís pulsar");
         System.out.println("Una vez se ha disparado, a la tecla enter tendrás que dar. Así sabrás quién armado iba de verdad");
-# Espera de 4 segundos    
+# Tiempo de 4 segundos.    
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
@@ -30,7 +38,7 @@ public class Juego {
         } 
 # Mensaje para jugador 1.
         System.out.println("Jugador 1 para disparar la tecla (a) tienes que pulsar");
-# Espera de 1,5 segundos.
+# Tiempo de 1,5 segundos.
         try {
             Thread.sleep(1500);
         } catch (InterruptedException e) {
@@ -38,32 +46,36 @@ public class Juego {
         } 
 # Mensaje para jugador 2.
         System.out.println("Jugador 2 para disparar la tecla (ñ) tienes que pulsar");
-# Espera de 3 segundos.
+# Tiempo de 3 segundos.
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } 
-# Reglas del juego.
-# Los mensajes anteriores se imprimen por consola.
-# Todos los mensajes anteriores se muestran gracias al comando (System.out.println).
+# Mensajes con las reglas del juego.
         System.out.println("- No se puede accionar la tecla antes de que se muestre el texto ¡DISPARA!");
         System.out.println("- Con un solo disparo certero el jugador ganará.");
         System.out.println("- ¡Que gané el más rápido! ;)");
-# Espera de 3 segundos.
+
+# Todos los mensajes anteriores se imprimen por consola y se muestran gracias al comando (System.out.println).
+
+# Tiempo de 3 segundos.
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } 
-# Instrucción para el comienzo del juego , que se muestra por consola al igual que los demás mensajes.
+# Comienzo del juego.
+// Es una instrucción que se muestra por consola al igual que el resto mensajes.
         System.out.println("Presiona enter para comenzar el juego."); 
-# Con este comando el juego no comienza hasta pulsar la tecla enter.
+# Comando esperarComienzo.
+// El juego no comienza hasta que se pulse la tecla enter.
         esperarComienzo(); 
-# Empieza el juego :).
+# Mensaje de que empieza el juego.
         System.out.println("El duelo ha comenzado"); 
 
-# Este es igual que un esperar, pero en este caso el tiempo que se espera es aleatorio gracias al comando random y la variable tiempoAleatorio.
+# Tiempo Random.
+// Este es igual que un esperar, pero en este caso el tiempo que se espera es aleatorio gracias al comando random y la variable tiempoAleatorio.
         Random random = new Random();
         int tiempoAleatorio = random.nextInt(7000) + 2000;
         try {
@@ -72,12 +84,14 @@ public class Juego {
             e.printStackTrace();
         } 
 
-# Texto "¡DISPARA!". Sinónimo a reacción.
+# Mensaje del texto "¡DISPARA!".
         System.out.println("¡DISPARA!"); 
-# La variable ganador espera la respuesta de los jugadores.
-        char ganador = esperarRespuesta(); 
 
-# Mediante estas condiciones se determina el ganador según la primera tecla presionada y se imprime el resultado.
+# Variable anador.
+// La variable ganador espera la respuesta de los jugadores.
+        char ganador = esperarRespuesta(); 
+# Elección de ganador.
+// Mediante estas condiciones se determina el ganador según la primera tecla presionada y se imprime el resultado.
         if (ganador == 'a') {
             System.out.println("¡Ha ganado el Jugador 1!");
         } else if (ganador == 'ñ') {
@@ -87,14 +101,16 @@ public class Juego {
         } 
     }
 
-# Con esta función hace esperar a los jugadores hasta que se presione la tecla enter.
+# Función esperarComienzo.
+// Con esta función hace esperar a los jugadores hasta que se presione la tecla enter.
     private static void esperarComienzo() {
         Scanner scanner = new Scanner(System.in);
         while (!scanner.nextLine().equals("")) {
         }
     } 
 
-# Con esta función devuelve la tecla del jugador más rápido y la convirte en minúscula para que no haya errores.
+# Función esperarRespuesta.
+// Con esta función devuelve la tecla del jugador más rápido y la convirte en minúscula para que no haya errores.
     private static char esperarRespuesta() {
         Scanner scanner = new Scanner(System.in);
         char tecla = scanner.next().charAt(0);
